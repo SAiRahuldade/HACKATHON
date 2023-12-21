@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System - Appointments</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #eee;
+            padding: 10px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .welcome-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Hospital Management System</h1>
+    </header>
+
+    <?php
+    // Simulating PHP session variable for the user's name
+    $userName = isset($_SESSION['userName']) ? $_SESSION['userName'] : 'User';
+    ?>
+
+    <div class="welcome-title">
+        <h2>Welcome, <?php echo $userName; ?>!</h2>
+    </div>
+
+    <form action="connect.php" method="post">
+        <h2>Schedule Appointment</h2>
+
+        <label for="patientName">Patient Name:</label>
+        <input type="text" id="patientName" name="patientName" >
+
+        <label for="gender">Select Gender:</label>
+        <select id="gender" name="gender" >
+            <option value="male">male</option>
+            <option value="female">female</option>
+            <option value="other">other</option>
+        </select>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email">
+
+        <label for="appointmentDate">Appointment Date:</label>
+        <input type="date" id="appointmentDate" name="appointmentDate" >
+
+        <label for="appointmentTime">Appointment Time:</label>
+        <input type="time" id="appointmentTime" name="appointmentTime" >
+
+        <button type="submit">Schedule Appointment</button>
+    </form>
+
+</body>
+</html>

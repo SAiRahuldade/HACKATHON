@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctors List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1em;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #010202;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .doctor {
+      margin-bottom: 20px;
+      border: 1px solid #d4d4d4;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .doctor img {
+      max-width: 100%;
+      border-radius: 4px;
+    }
+
+    h2 {
+      color: #c522c5;
+    }
+
+    p {
+      color: #666;
+    }
+
+    .contact-info {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .doctor:hover .contact-info {
+      display: block;
+      color: #333;
+    }
+
+    .contact-info p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Doctors List</h1>
+  </header>
+
+  <div class="container">
+    <div class="doctor">
+      <h2 onclick="toggleContactInfo('vedesh')">Dr. Vedesh</h2>
+      <p>Specialty: Cardiology</p>
+      <p>Experience: 10 years</p>
+      <div class="contact-info" id="vedeshContactInfo">
+        <p>Contact Information:</p>
+        <p>Email: vedesh@example.com</p>
+        <p>Phone: +1 (555) 123-4567</p>
+      </div>
+    </div>
+
+    <div class="doctor">
+      <h2 onclick="toggleContactInfo('tharun')">Dr. L. Tharun</h2>
+      <p>Specialty: Dentist</p>
+      <p>Experience: 3 years</p>
+      <div class="contact-info" id="tharunContactInfo">
+        <p>Contact Information:</p>
+        <p>Email: tharun@example.com</p>
+        <p>Phone: +1 (555) 234-5678</p>
+      </div>
+    </div>
+
+    <div class="doctor">
+        <h2 onclick="toggleContactInfo('Rahul')">Dr. rahul</h2>
+        <p>Specialty: neurologist</p>
+        <p>Experience: 7 years</p>
+        <div class="contact-info" id="rahulContactInfo">
+          <p>Contact Information:</p>
+          <p>Email: rahul@example.com</p>
+          <p>Phone: +1 (599) 284-5678</p>
+        </div>
+      </div>
+      <div class="doctor">
+        <h2 onclick="toggleContactInfo('tharun')">Dr. dhanush</h2>
+        <p>Specialty: urinologist</p>
+        <p>Experience: 10 years</p>
+        <div class="contact-info" id="dhanushContactInfo">
+          <p>Contact Information:</p>
+          <p>Email: dhanush@example.com</p>
+          <p>Phone: +1 (555) 264-5278</p>
+        </div>
+      </div>
+      <div class="doctor">
+        <h2 onclick="toggleContactInfo('chandrakanth')">Dr. k.chandrakanth</h2>
+        <p>Specialty: Gynacologist</p>
+        <p>Experience: 15 years</p>
+        <div class="contact-info" id="chnadrakanthContactInfo">
+          <p>Contact Information:</p>
+          <p>Email: chandrakanth@example.com</p>
+          <p>Phone: +1 (555) 234-3678</p>
+        </div>
+      </div>
+
+    
+
+  </div>
+
+  <script>
+    function toggleContactInfo(doctorName) {
+      const contactInfo = document.getElementById(doctorName + 'ContactInfo');
+      contactInfo.style.display = (contactInfo.style.display === 'none') ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>

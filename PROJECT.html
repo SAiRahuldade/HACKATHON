@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYSTIC FALLS HOSPITAL</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+    <!-- Add any additional metadata or links to stylesheets here -->
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title {
+    font-size: 34px !important;
+    color: rgb(15, 1, 3) !important;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
+        }
+
+        .search {
+            font-size: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 20px;
+            border-radius: 5px;
+            border: 1px solid black;
+            padding: 8px;
+            margin-right: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-size: 20px;
+            display: inline-block;
+            color: #333;
+        }
+
+        .image_d {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Add styling for chat container */
+        #chat-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            height: 300px;
+        }
+
+        #user-input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        #send-button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="container">
+            <div id="logo">
+                <span class="title">Mystic Falls Hospital</span>
+            </div>
+           
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="http://127.0.0.1:5500/about.html/about.htm">About Us</a></li>
+                <li><a href="http://127.0.0.1:5500/doctors/doctors.html">Doctors</a></li>
+                <li><a href="http://127.0.0.1:5500/appointment.html/appoin.html">Appointments</a></li>
+                <li><a href="http://127.0.0.1:5500/dashboard.html/dash.html">Dashboard</a></li>
+                <li><a href="http://127.0.0.1:5500/contact/insurance.html">Insurance Suggestions</a></li>
+                <li><a href="http://127.0.0.1:5500/login/login.html">Login/Register</a></li>
+                <li><a href="http://127.0.0.1:5500/chatbot/chatbot.html">ChatBot</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <img class="image_d" src="https://ehealth.eletsonline.com/wp-content/uploads/2009/07/best-hospital-in-south-india.jpg" alt="Mystic Falls Hospital Image">
+
+</body>
+</html>

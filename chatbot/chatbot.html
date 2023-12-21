@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #chat-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            height: 300px;
+        }
+
+        #user-input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        #send-button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Hospital Chatbot</h1>
+    </header>
+
+    <div id="chat-container">
+        <div id="chat-messages">
+            <!-- Chat messages will appear here -->
+            <div id="bot-message">Hello! How can I assist you with your hospital-related questions?</div>
+        </div>
+        <input type="text" id="user-input" placeholder="Type your question...">
+        <button id="send-button" onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var userMessage = document.getElementById('user-input').value;
+            var chatMessages = document.getElementById('chat-messages');
+
+            // Append user message to chat container
+            chatMessages.innerHTML += '<div><strong>You:</strong> ' + userMessage + '</div>';
+
+            // Get bot response based on the user's question
+            var botResponse = getBotResponse(userMessage);
+
+            // Append bot response to chat container
+            chatMessages.innerHTML += '<div id="bot-message"><strong>Bot:</strong> ' + botResponse + '</div>';
+
+            // Clear user input
+            document.getElementById('user-input').value = '';
+
+            // Scroll to the bottom of the chat container
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function getBotResponse(userMessage) {
+            // Simple bot logic (replace with more sophisticated logic or backend API calls)
+            if (userMessage.toLowerCase().includes('appointment')) {
+                return 'To schedule an appointment, please contact our front desk at [hospital phone number].';
+            } else if (userMessage.toLowerCase().includes('visiting hours')) {
+                return 'Our visiting hours are from 10 AM to 8 PM every day.';
+            } else if (userMessage.toLowerCase().includes('emergency')) {
+                return 'In case of emergencies, please call 911 or visit the nearest emergency room.';
+            } else if (userMessage.toLowerCase().includes('services')) {
+                return 'We offer a range of services including [list of services].';
+            } else if (userMessage.toLowerCase().includes('insurance')) {
+                return 'We accept a variety of insurance plans. Please check with our billing department for details.';
+            } else if (userMessage.toLowerCase().includes('location')) {
+                return 'Our hospital is located at [hospital address].';
+            } else if (userMessage.toLowerCase().includes('parking')) {
+                return 'We have parking available on-site for patients and visitors.';
+            } else if (userMessage.toLowerCase().includes('cafeteria')) {
+                return 'Yes, we have a cafeteria. It is open during regular business hours.';
+            } else if (userMessage.toLowerCase().includes('doctors')) {
+                return 'We have a team of experienced doctors in various specialties. You can find more information on our website or by contacting our reception.';
+            } else if (userMessage.toLowerCase().includes('pharmacy')) {
+                return 'We have an on-site pharmacy for your convenience.';
+            } else {
+                return 'I\'m not sure how to respond to that. Please ask a specific hospital-related question.';
+            }
+        }
+    </script>
+
+</body>
+</html>
